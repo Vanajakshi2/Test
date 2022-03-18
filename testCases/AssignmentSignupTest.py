@@ -192,8 +192,6 @@ class SignupTest(unittest.TestCase):
         time.sleep(4)
         self.assertNotEqual("My account -My Store",self.driver.title, "test_invalidpwd_signup-FAILED")
 
-
-
     def test_invalidcity_signup(self):
         su = Signup(self.driver)
         su.open_website(self.txturl)
