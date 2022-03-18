@@ -163,6 +163,37 @@ class SignupTest(unittest.TestCase):
         self.assertNotEqual("My account -My Store",self.driver.title, "test_invalidpwd_signup-FAILED")
 
 
+
+    def test_invaliddob_signup(self):
+        su = Signup(self.driver)
+        su.open_website(self.txturl)
+        self.driver.implicitly_wait(4)
+        su.click_signinbtn()
+        su.enter_email(self.txtcreationemail2)
+        su.click_createbtn()
+        time.sleep(3)
+        su.select_female_gender()
+        su.enter_firstname(self.txtfirstname)
+        su.enter_lastname(self.txtlastname)
+        su.enter_invalidpwd(self.txtpwd)
+        su.select_invaliddob()
+        su.select_checkboxes()
+        su.enter_company(self.txtcompany)
+        su.enter_address(self.txtaddress)
+        su.enter_city(self.txtcity)
+        su.select_state()
+        su.enter_pincode(self.txtpincode)
+        su.select_country()
+        su.enter_txtinfo(self.txtinfo)
+        su.enter_homephone(self.txthomephone)
+        su.enter_mobilenumber(self.txtmobilephone)
+        su.enter_address_alias(self.txtalias)
+        su.click_registerbtn()
+        time.sleep(4)
+        self.assertNotEqual("My account -My Store",self.driver.title, "test_invalidpwd_signup-FAILED")
+
+
+
     def test_invalidcity_signup(self):
         su = Signup(self.driver)
         su.open_website(self.txturl)

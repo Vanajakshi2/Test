@@ -118,6 +118,15 @@ class Signup():
         self.year = Select(self.driver.find_element(By.ID, self.year))
         self.year.select_by_value("1995")
 
+    def select_invaliddob(self):
+        self.day = Select(self.driver.find_element(By.ID, self.day))
+        self.day.select_by_value("31")
+        self.month = Select(self.driver.find_element(By.ID, self.month))
+        self.month.select_by_value("11")
+        self.year = Select(self.driver.find_element(By.ID, self.year))
+        self.year.select_by_value("1995")
+
+
     def select_checkboxes(self):
         self.driver.find_element(By.ID, self.newsletter).click()
         self.driver.find_element(By.ID, self.offers).click()
